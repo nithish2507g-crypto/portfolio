@@ -1,0 +1,377 @@
+
+css
+/* =========================
+   BASIC SETTINGS
+   ========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color:var(--background-color);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    color: var(--text-color);
+}
+
+
+/* =========================
+   HEADINGS
+   ========================= */
+
+h1,
+h2 {
+    letter-spacing: 20px;
+    color: var(--main-color);
+    text-align: center ;
+}
+
+h1 {
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 25px;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+header {
+    min-height: 300px;
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("bg.jpg") center / cover no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+header h1{
+    color: white;
+    text-shadow:
+        0 0 5px white,
+        0 0 15px blue;
+}
+
+
+/* =========================
+   NAVIGATION
+   ========================= */
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    position: sticky;
+    top: 0;
+
+    background-color: white;
+    padding: 10px;
+}
+
+nav a {
+    display: inline-block;
+    white-space: nowrap;
+    color: rgb(221, 78, 26);
+    text-decoration: none;
+
+    font-weight: bold;
+
+    padding: 10px;
+
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+nav a:hover {
+    color: blue;
+    transform: scale(1.1);
+}
+
+
+/* =========================
+   SECTIONS
+   ========================= */
+
+section {
+    width: calc(100% - 40px);
+    max-width: 900px;
+    min-width: 300px;
+    margin: 20px auto;
+    padding: 20px;
+
+    background-color: rgba(255,255,255,0.92);
+
+    border-radius: 15px ;
+    
+    
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+
+}
+
+
+/* =========================
+   PARAGRAPHS
+   ========================= */
+
+p {
+    font-size: 16px;
+    font-style: italic;
+
+    margin: 5px;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   STRONG TEXT
+   ========================= */
+
+strong {
+    font-weight: 900;
+    color: black;
+}
+
+
+/* =========================
+   SKILLS GRID
+   ========================= */
+
+.skills {
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+    grid-template-rows: repeat(3,50px);
+
+    gap: 20px;
+    
+    place-content:center ;
+}
+
+
+/* =========================
+   SKILL ITEMS
+   ========================= */
+
+.skills div {
+    padding: 15px;
+    
+
+    text-align: center;
+
+    background-color: lightgray;
+
+    border: 1px solid black;
+
+    transition: 0.3s;
+    border-radius: 10px
+}
+
+.skills div:hover {
+    transform: scale(1.05);
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer {
+    background-color: white;
+
+    text-align: center;
+
+    padding: 20px;
+}
+
+
+/* =========================
+   MOBILE / RESPONSIVE
+   ========================= */
+
+@media (max-width: 600px) {
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    section {
+    
+        width: 95%;
+        padding: 15px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .skills {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size:clamp(30px,5vw,50px) ;
+    }
+
+    h2 {
+        font-size: clamp(22px,5vw,32px);
+    }
+}
+
+
+li:hover {
+    background-color: lightgray;
+}
+section h2::before {
+    content: "★ ";
+}
+p::selection {
+    background-color: yellow;
+}:root {
+    --main-color: brown;
+    --background-color: lightgray;
+    --card-color: white;
+    --text-color: black;
+}
+section{
+    transition: 0.3s;
+}
+section:hover{
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+section li {
+    transition: 0.3s;
+}
+
+section li:hover {
+    transform: translateX(5px);
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header h1 {
+    animation: fadeIn 1.5s;
+}
+.project{
+    border: 2px solid #ddd;
+    border-top: 4px solid purple;
+    
+    
+    min-height:300px;
+    padding: 15px;
+    
+    opacity: 0.8;
+    transition: 0.3s;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+
+}
+.project:hover{
+    opacity: 1;
+    border-radius: 2px;
+    outline:2px solid purple;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+
+}
+.project li{
+    white-space: normal;
+    line-height: 1.5;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}   
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    background-color: white;
+}
+section h2 {
+    border-bottom: 3px solid purple;
+    padding-bottom: 8px;
+}
+.profile{
+    display: inline-block;
+    width: 170px;
+    height: 220px;
+    
+    
+   
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 50%;
+
+    opacity: 0.9;
+    filter: grayscale(100%);
+  
+    transition: 0.5s;
+}
+.profile:hover{
+    opacity: 1;
+    transform:scale(1.05);
+    filter: grayscale(0%);
+}  
+.head{
+    color: brown;
+    transition: 0.3s;
+}
+
+.head:hover{
+    background-color: lightgray;
+    transform:translateX(5px) ;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+.about-content p{
+    
+     flex: 1;
+    margin: 0;
+
+}
+.about-content {
+
+display: flex;
+    align-items: center;
+    gap: 30px;
+    text-align: left;
+}
+#about img {
+    display: flex;
+    width: 170px;
+    height: 220px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+#about h2{
+    margin-bottom: 30px;
+}
+#about{
+    text-align: center;
+}
+p{
+    line-height: 1.6;
+    word-spacing: 2px;
+}
+ body {
+    
+    margin: 0;
+    background: lightslategray url("bg.jpg") center  top/ cover no-repeat fixed;
+    background-blend-mode: multiply;
+}
