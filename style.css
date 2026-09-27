@@ -248,10 +248,10 @@ footer {
 
     #about p {
         font-size: 15px;
+       height:auto;
         line-height: 1.6;
     }
 }
-Step 2
 
 
 li:hover {
